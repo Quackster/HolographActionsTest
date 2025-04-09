@@ -51,7 +51,6 @@ jobs:
           prerelease: true
           title: "Development Build ${{ steps.sha-short.outputs.sha-short }}"
           files: |
-            HolographEmulator-linux-x64.zip
             HolographEmulator-win-x64.zip
 
   pre-release-linux:
@@ -101,4 +100,3 @@ jobs:
           title: "Development Build ${{ steps.sha-short.outputs.sha-short }}"
           files: |
             HolographEmulator-linux-x64.zip
-            HolographEmulator-win-x64.zip
