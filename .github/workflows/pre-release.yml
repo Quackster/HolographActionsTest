@@ -40,9 +40,8 @@ jobs:
           copy SQL/database.sql win-x64
 
       - name: Compress release files
-        uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r ./HolographEmulator-win-x64.zip win-x64
+        run: |
+          Compress-Archive -Path win-x64 -DestinationPath ./HolographEmulator-win-x64.zip
           
       # Create latest tag
       - uses: "marvinpinto/action-automatic-releases@latest"
