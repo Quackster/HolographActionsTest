@@ -33,11 +33,11 @@ jobs:
           
       - name: File release preparation
         run: |
-          cp SQL/mysql.ini win-x64
+          copy SQL/mysql.ini win-x64
           
       - name: File release preparation
         run: |
-          cp SQL/database.sql win-x64
+          copy SQL/database.sql win-x64
 
       - name: Compress release files
         uses: montudor/action-zip@v1
