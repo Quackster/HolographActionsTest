@@ -39,6 +39,10 @@ jobs:
         run: |
           copy SQL/database.sql win-x64
 
+      - name: Delete HolographEmulator.pdb file
+        run: |
+          Remove-Item -Path win-x64\HolographEmulator.pdb -Force
+
       - name: Compress release files
         run: |
           Compress-Archive -Path win-x64 -DestinationPath ./HolographEmulator-win-x64.zip
@@ -85,6 +89,10 @@ jobs:
       - name: File release preparation
         run: |
           sudo cp SQL/database.sql linux-x64
+
+      - name: Delete HolographEmulator.dbg file (Linux)
+        run: |
+          rm -f linux-x64/HolographEmulator.dbg
         
       - name: Compress release files
         uses: montudor/action-zip@v1
